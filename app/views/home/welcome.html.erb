@@ -1,0 +1,7 @@
+<h1>Boas-vindas ao HOME Task List!</h1>
+<h3>Sua lista de tarefas em HOME:</h3>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.description %></li>
+  <% end %>
+</ul>
