@@ -2,6 +2,11 @@
 <h3>Sua lista de tarefas em HOME:</h3>
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.description %> <%= link_to 'Editar', edit_task_path(task) %> </li>
-  <% end %>
+    <li>
+      <%= link_to task.description, task_path(task) %>
+      <%= link_to 'Editar', edit_task_path(task) %>
+      <%= link_to 'Apagar', task, method: :delete, data: { turbo_confirm: 'Deseja apagar essa tarefa?' } %>
+    </li>
+  <% end %> 
 </ul>
+<%= link_to 'Adicionar', new_task_path %>
